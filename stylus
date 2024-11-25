@@ -12,7 +12,7 @@
 ] > 
 <bookstore> 
 <book> 
-<Title>HTML5</Title> 
+<title>HTML5</title> 
 <author>Dr.mohan</author> 
 <isbn>923-145-3456</isbn> 
 <pub>dreamTech</pub> 
@@ -22,7 +22,7 @@
 <book> 
 <bookstore> 
 <book> 
-<Title>AI</Title> 
+<title>AI</title> 
 <author>Dr.Ravi</author> 
 <isbn>923444</isbn> 
 <pub>Techy</pub> 
@@ -48,7 +48,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bookstore> 
 <book> 
-<Title>HTML5</Title> 
+<title>HTML5</title> 
 <author>Dr.mohan</author> 
 <isbn>923-145-3456</isbn> 
 <pub>dreamTech</pub> 
@@ -58,7 +58,7 @@
 <book> 
 <bookstore> 
 <book> 
-<Title>AI</Title> 
+<title>AI</title> 
 <author>Dr.Ravi</author> 
 <isbn>923444</isbn> 
 <pub>Techy</pub> 
@@ -86,7 +86,7 @@
 <!DOCTYPE bookstore PUBLIC "-//Surendra/1.O/EN"  "book.dtd" > 
 <bookstore> 
 <book> 
-<Title>HTML5</Title> 
+<title>HTML5</title> 
 <author>Dr.mohan</author> 
 <isbn>923-145-3456</isbn> 
 <pub>dreamTech</pub> 
@@ -96,7 +96,7 @@
 <book> 
 <bookstore> 
 <book> 
-<Title>AI</Title> 
+<title>AI</title> 
 <author>Dr.Ravi</author> 
 <isbn>923444</isbn> 
 <pub>Techy</pub> 
