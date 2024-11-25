@@ -1,32 +1,33 @@
 //.html
+
+
 //Hiding of elements 
 
 <html> 
 <head> 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
-</script> 
-<script> 
-$(document).ready(function(){ 
- $("#b1").click(function(){ 
-  $("img").hide(1000); 
- }); 
- $("#b2").click(function(){ 
-  $("img").show("slow"); 
- }); 
- $("#b3").click(function(){ 
-  $("img").toggle("fast"); 
- }); 
-}); 
-</script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+    </script> 
+    <script> 
+        $(document).ready(function(){ 
+            $("#b1").click(function(){ 
+                $("img").hide(1000); 
+            }); 
+            $("#b2").click(function(){ 
+                $("img").show("slow"); 
+            }); 
+            $("#b3").click(function(){ 
+                $("img").toggle("fast"); 
+            }); 
+        }); 
+    </script> 
 </head> 
 <body> 
-<imgsrc="1.jpg"> 
-<button id="b1"> Hide </button> 
-<button id="b2"> Show </button> 
-<button id="b3"> Toggle </button> 
+    <img src="1.jpg"> 
+    <button id="b1"> Hide </button> 
+    <button id="b2"> Show </button> 
+    <button id="b3"> Toggle </button> 
 </body> 
 </html>
-
 
 
 
@@ -34,32 +35,31 @@ $(document).ready(function(){
 //Fading effects 
 <html> 
 <head> 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
-</script> 
-<script> 
-$(document).ready(function(){ 
-$("#b1").click(function(){ 
- $("img").fadeOut(1000); 
-}); 
-$("#b2").click(function(){ 
- $("img").fadeIn("slow"); 
-}); 
-$("#b3").click(function(){ 
- $("img").fadeToggle("fast"); 
-}); 
-$("#b4").click(function(){ 
- $("img").fadeTo("slow",0.3); 
-}); 
- 
-}); 
-</script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script> 
+    <script> 
+        $(document).ready(function(){ 
+            $("#b1").click(function(){ 
+                $("img").fadeOut(1000); 
+            }); 
+            $("#b2").click(function(){ 
+                $("img").fadeIn("slow"); 
+            }); 
+            $("#b3").click(function(){ 
+                $("img").fadeToggle("fast"); 
+            }); 
+            $("#b4").click(function(){ 
+                $("img").fadeTo("slow",0.3); 
+            }); 
+        }); 
+    </script> 
 </head> 
 <body> 
-<imgsrc="1.jpg"><br><br> 
-<button id="b1"> Fade Out </button> 
-<button id="b2"> Fade In </button> 
-<button id="b3"> Fade Toggle </button> 
-<button id="b4"> Fade To </button> 
+    <img src="1.jpg"><br><br> 
+    <button id="b1"> Fade Out </button> 
+    <button id="b2"> Fade In </button> 
+    <button id="b3"> Fade Toggle </button> 
+    <button id="b4"> Fade To </button> 
 </body> 
 </html>
 
@@ -71,30 +71,30 @@ $("#b4").click(function(){
 
 
 //Sliding effects
-<html> 
-<head> 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
-</script> 
-<script> 
-$(document).ready(function(){ 
- $("#b1").click(function(){ 
-  $("h1").slideUp(1000); 
- }); 
- $("#b2").click(function(){ 
-  $("h1").slideDown("slow"); 
- }); 
- $("#b3").click(function(){ 
-  $("h1").slideToggle("fast"); 
- }); 
-}); 
-</script> 
-</head> 
-<body> 
-<h1 style="background-color:orange">Click on the button to see sliding effect</h1> 
-<button id="b1"> Slide up </button> 
-<button id="b2"> Slide down </button> 
-<button id="b3"> Slide Toggle </button> 
-</body> 
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#b1").click(function() {
+                $("h1").slideUp(1000);
+            });
+            $("#b2").click(function() {
+                $("h1").slideDown("slow");
+            });
+            $("#b3").click(function() {
+                $("h1").slideToggle("fast");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 style="background-color:orange">Click on the button to see sliding effect</h1>
+    <button id="b1"> Slide up </button>
+    <button id="b2"> Slide down </button>
+    <button id="b3"> Slide Toggle </button>
+</body>
 </html>
 
 
@@ -102,41 +102,64 @@ $(document).ready(function(){
 
 
 
+
 //Mouse-Events 
-<html> 
-<head> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
-</script> 
-<script> 
- $(document).ready(function() 
- { 
-  $("#i1").mouseenter(function() 
-  { 
-   $("#i1").css("background-color","yellow"); 
-  }); 
-  $("#i1").mouseout(function() 
-  { 
-   $("#i1").css("background-color","pink"); 
-  }); 
-  $("#i2").mousedown(function() 
-  { 
-   $("#i2").css("background-color","blue"); 
-  }); 
-  $("#i2").mouseup(function() 
-  { 
-   $("#i2").css("background-color","green"); 
-  });  
-  $("#i3").mouseover(function() 
-  { 
-   alert("cursor is over this heading"); 
-  }); 
-   
- }); 
-</script> 
-</head> 
-<body> 
-<h1 id="i1">Mouse Cursor over this heading 1 to trigger mouse events</h1> 
-<h1 id="i2">Mouse Cursor over this heading 2 to trigger mouse events</h1> 
-<h1 id="i3">Mouse Cursor over this heading 3 to trigger mouse events</h1> 
-</body> 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() { 
+            $("#i1").mouseenter(function() {
+                $("#i1").css("background-color", "yellow");
+            }); 
+            $("#i1").mouseout(function() {
+                $("#i1").css("background-color", "pink");
+            }); 
+            $("#i2").mousedown(function() {
+                $("#i2").css("background-color", "blue");
+            }); 
+            $("#i2").mouseup(function() {
+                $("#i2").css("background-color", "green");
+            });  
+            $("#i3").mouseover(function() {
+                alert("cursor is over this heading");
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <h1 id="i1">Mouse Cursor over this heading 1 to trigger mouse events</h1> 
+    <h1 id="i2">Mouse Cursor over this heading 2 to trigger mouse events</h1> 
+    <h1 id="i3">Mouse Cursor over this heading 3 to trigger mouse events</h1> 
+</body>
+</html>
+
+
+
+
+
+//Keyboard Events
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyboard Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("input").keydown(function() {
+                $(this).css("background-color", "yellow");
+            });
+            $("input").keyup(function() {
+                $(this).css("background-color", "pink");
+            });
+        });
+    </script>
+</head>
+<body>
+    <form method="post">
+        Enter name: <input type="text" name="t1"><br>
+    </form>
+</body>
 </html>
