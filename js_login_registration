@@ -8,43 +8,32 @@
         function validateLogin() {
             var uname = document.getElementById('username').value;
             var pass = document.getElementById('password').value;
-
             if (!uname.match(/^[a-zA-Z]{4,30}$/)) {
                 alert("Please provide a valid username (4-30 alphabetic characters).");
                 return false;
             }
             
             if (!pass.match(/^[a-zA-Z1-9]{8,30}$/)) {
-                alert("Please provide a valid password (8-30 characters,alphabetics).");
+                alert("Please provide a valid password (8-30 characters, alphabetics).");
                 return false;
-            }
-            
+            }       
             return true;
         }
     </script>
 </head>
 <body>
-    <form name="loginForm" method="get" action="succ.html" onsubmit="return validateLogin()">
-        <table align="center" border="2">
-            <caption>Welcome to Login Page</caption>
-            <tr>
-                <td>User Name</td>
-                <td><input type="text" id="username" name="uname" placeholder="only characters"></td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td><input type="password" id="password" name="pwd" placeholder="enterpassword"></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="submit" value="Submit"></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="reset" value="Reset"></td>
-            </tr>
-        </table>
-    </form>
+    <center>
+        <form name="loginForm" method="get" action="succ.html" onsubmit="return validateLogin()">
+            User Name: <input type="text" id="username" name="uname" placeholder="only characters"><br><br>
+            Password: <input type="password" id="password" name="pwd" placeholder="enterpassword"><br><br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </center>
 </body>
 </html>
+
+
 
 
 
@@ -64,53 +53,41 @@
             var password = document.getElementById('passwordField').value;
             var email = document.getElementById('email').value;
             var phone = document.getElementById('phone').value;
-
             if (!name.match(/^[A-Za-z\s]{6,}$/)) {
                 alert("Please enter a valid name (at least 6 alphabetic characters).");
                 return false;
             }
-
             if (password.length < 6) {
                 alert("Please enter a password with at least 6 characters.");
                 return false;
             }
-
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 alert("Please enter a valid email address.");
                 return false;
             }
-
             if (!phone.match(/^\d{10}$/)) {
                 alert("Please enter a valid 10-digit phone number.");
                 return false;
             }
-
             return true;
         }
     </script>
 </head>
 <body>
-    <h1>Register Here</h1>
-    <form name="registrationForm" onsubmit="return validateRegistration()">
-        <label for="userName">Name:</label>
-        <input type="text" id="userName" name="userName" /><br /><br />
-
-        <label for="passwordField">Password:</label>
-        <input type="password" id="passwordField" name="passwordField" /><br /><br />
-
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" /><br /><br />
-
-        <label for="phone">Phone:</label>
-        <input type="text" id="phone" name="phone" maxlength="10" /><br /><br />
-
-        <input type="submit" value="Submit" />
-        <input type="reset" value="Reset" />
-    </form>
+    <center>
+        <h1>Register Here</h1>
+        <form name="registrationForm" onsubmit="return validateRegistration()">
+            Name: <input type="text" id="userName" name="userName" /><br /><br />
+            Password: <input type="password" id="passwordField" name="passwordField" /><br /><br />
+            Email: <input type="text" id="email" name="email" /><br /><br />
+            Phone: <input type="text" id="phone" name="phone" maxlength="10" /><br /><br />
+            <input type="submit" value="Submit" />
+            <input type="reset" value="Reset" />
+        </form>
+    </center>
 </body>
 </html>
-
 
 
 
