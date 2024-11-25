@@ -55,10 +55,10 @@
                 alert("Please enter a valid name (at least 6 alphabetic characters).");
                 return false;
             }
-            if (password.length < 6) {
-                alert("Please enter a password with at least 6 characters.");
+            if (!pass.match(/^[a-zA-Z0-9]{8,30}$/)) {
+                alert("Please provide a valid password (8-30 characters, alphabetics).");
                 return false;
-            }
+            }       
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 alert("Please enter a valid email address.");
