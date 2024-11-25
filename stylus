@@ -15,17 +15,19 @@
 <Title>HTML5</Title> 
 <author>Dr.mohan</author> 
 <isbn>923-145-3456</isbn> 
-<pubshiler>dreamTech</pubshiler> 
-<edition>2019</edition> 
-<price>849</price> 
+<pub>dreamTech</pub> 
+<edi>2019</edi> 
+<pr>849</pri> 
 </book> 
 <book> 
+<bookstore> 
+<book> 
 <Title>AI</Title> 
-<author>Dr.praveen</author> 
-<isbn>912-145-34789</isbn> 
-<pubshiler>wrox</pubshiler> 
-<edition>2021</edition> 
-<price>1849</price> 
+<author>Dr.Ravi</author> 
+<isbn>923444</isbn> 
+<pub>Techy</pub> 
+<edi>2021</edi> 
+<pr>999</pri> 
 </book> 
 </bookstore>
 
@@ -38,29 +40,31 @@
 <!ELEMENT title (#PCDATA) > 
 <!ELEMENT author (#PCDATA) > 
 <!ELEMENT isbn (#PCDATA) > 
-<!ELEMENT pubilication (#PCDATA) > 
-<!ELEMENT edition (#PCDATA) > 
+<!ELEMENT pub (#PCDATA) > 
+<!ELEMENT edi (#PCDATA) > 
 <!ELEMENT price (#PCDATA) > 
 
 //book.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <bookstore> 
- <book> 
-  <Title>HTML5</Title> 
-  <author>Dr.mohan</author> 
-  <isbn>923-145-3456</isbn> 
-  <pubshiler>dreamTech</pubshiler> 
-  <edition>2019</edition> 
-  <price>849</price> 
- </book> 
- <book> 
-  <Title>AI</Title> 
-  <author>Dr.praveen</author> 
-  <isbn>912-145-34789</isbn> 
-  <pubshiler>wrox</pubshiler> 
-  <edition>2021</edition> 
-  <price>1849</price> 
- </book> 
+<book> 
+<Title>HTML5</Title> 
+<author>Dr.mohan</author> 
+<isbn>923-145-3456</isbn> 
+<pub>dreamTech</pub> 
+<edi>2019</edi> 
+<pr>849</pri> 
+</book> 
+<book> 
+<bookstore> 
+<book> 
+<Title>AI</Title> 
+<author>Dr.Ravi</author> 
+<isbn>923444</isbn> 
+<pub>Techy</pub> 
+<edi>2021</edi> 
+<pr>999</pri> 
+</book> 
 </bookstore>
 
 
@@ -73,28 +77,31 @@
 <!ELEMENT title (#PCDATA) > 
 <!ELEMENT author (#PCDATA) > 
 <!ELEMENT isbn (#PCDATA) > 
-<!ELEMENT pubilication (#PCDATA) > 
-<!ELEMENT edition (#PCDATA) > 
+<!ELEMENT pub (#PCDATA) > 
+<!ELEMENT edi (#PCDATA) > 
 <!ELEMENT price (#PCDATA) > 
 
 //book.xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookstore PUBLIC "-//Surendra/1.O/EN"  "book.dtd" > 
 <bookstore> 
- <book> 
-  <title> AI</title> 
-  <author>Surendra</author> 
-  <ISBN>978-93-5119-90</ISBN> 
-  <publisher>dreamTech</publisher> 
-  <edition>2019</edition> 
-  <price>1849</price> 
- </book> 
- <book> 
-  <title> Web Technologies</title> 
-  <author>mohan</author> 
-  <ISBN>978-93-5119-907-6</ISBN> 
-  <publisher>wrox</publisher> 
-  <edition>1230</edition> 
-  </book> 
+<book> 
+<Title>HTML5</Title> 
+<author>Dr.mohan</author> 
+<isbn>923-145-3456</isbn> 
+<pub>dreamTech</pub> 
+<edi>2019</edi> 
+<pr>849</pri> 
+</book> 
+<book> 
+<bookstore> 
+<book> 
+<Title>AI</Title> 
+<author>Dr.Ravi</author> 
+<isbn>923444</isbn> 
+<pub>Techy</pub> 
+<edi>2021</edi> 
+<pr>999</pri> 
+</book> 
 </bookstore> 
 
