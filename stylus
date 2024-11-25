@@ -41,6 +41,7 @@
 <!ELEMENT pubilication (#PCDATA) > 
 <!ELEMENT edition (#PCDATA) > 
 <!ELEMENT price (#PCDATA) > 
+
 //book.xml
 <?xml version="1.0"?> 
 <bookstore> 
@@ -75,6 +76,7 @@
 <!ELEMENT pubilication (#PCDATA) > 
 <!ELEMENT edition (#PCDATA) > 
 <!ELEMENT price (#PCDATA) > 
+
 //book.xml 
 <?xml version="1.0" ?> 
 <!DOCTYPE bookstore PUBLIC "-//Surendra/1.O/EN"  "book.dtd" > 
