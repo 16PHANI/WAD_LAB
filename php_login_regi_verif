@@ -1,0 +1,105 @@
+//login.html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+    <center>
+    <h1>Login Page</h1>
+    <form action="login.php" method="post">
+        User Name: <input type="text" name="uname" placeholder="only characters"><br><br>
+        Password: <input type="password" name="pwd" placeholder="enter password"><br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</center>
+</body>
+</html>
+
+
+
+
+//login.php
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $uname = trim($_POST["uname"]);
+    $pwd = trim($_POST["pwd"]);
+    $errors = [];
+    if (!preg_match("/^[a-zA-Z]{4,30}$/", $uname)) {
+        $errors[] = "Please provide a valid username (4-30 alphabetic characters).";
+    }
+    if (!preg_match("/^[a-zA-Z1-9]{8,30}$/", $pwd)) {
+        $errors[] = "Please provide a valid password (8-30 characters, alphabetics).";
+    }
+    if (empty($errors)) {
+        echo "Login successful!";
+    } else {
+        foreach ($errors as $error) {
+            echo "<p>$error</p>";
+        }
+    }
+}
+?>
+
+
+
+
+
+//registration.html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Page</title>
+</head>
+<body>
+    <center>
+    <h1>Register Here</h1>
+    <form action="registration.php" method="post">
+        Name: <input type="text" name="uname" /><br /><br />
+        Password: <input type="password" name="pwd" /><br /><br />
+        Email: <input type="email" name="email" /><br /><br />
+        Phone: <input type="tel" name="phone" maxlength="10" /><br /><br />
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+    </form>
+    </center>
+</body>
+</html>
+
+
+
+
+//registration.php
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = trim($_POST["uname"]);
+    $password = trim($_POST["pwd"]);
+    $email = trim($_POST["email"]);
+    $phone = trim($_POST["phone"]);
+    $errors = [];
+    if (!preg_match("/^[A-Za-z\s]{6,}$/", $name)) {
+        $errors[] = "Please enter a valid name (at least 6 alphabetic characters).";
+    }
+    if (strlen($password) < 6) {
+        $errors[] = "Please enter a password with at least 6 characters.";
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Please enter a valid email address.";
+    }
+    if (!preg_match("/^\d{10}$/", $phone)) {
+        $errors[] = "Please enter a valid 10-digit phone number.";
+    }
+    if (empty($errors)) {
+        echo "Registration successful!";
+    } else {
+        foreach ($errors as $error) {
+            echo "<p>$error</p>";
+        }
+    }
+}
+?>
