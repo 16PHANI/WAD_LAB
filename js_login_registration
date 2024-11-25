@@ -13,7 +13,7 @@
                 return false;
             }
             
-            if (!pass.match(/^[a-zA-Z1-9]{8,30}$/)) {
+            if (!pass.match(/^[a-zA-Z0-9]{8,30}$/)) {
                 alert("Please provide a valid password (8-30 characters, alphabetics).");
                 return false;
             }       
