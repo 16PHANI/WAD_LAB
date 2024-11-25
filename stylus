@@ -43,7 +43,7 @@
 <!ELEMENT price (#PCDATA) > 
 
 //book.xml
-<?xml version="1.0"?> 
+<?xml version="1.0" encoding="UTF-8"?>
 <bookstore> 
  <book> 
   <Title>HTML5</Title> 
@@ -78,7 +78,7 @@
 <!ELEMENT price (#PCDATA) > 
 
 //book.xml 
-<?xml version="1.0" ?> 
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookstore PUBLIC "-//Surendra/1.O/EN"  "book.dtd" > 
 <bookstore> 
  <book> 
