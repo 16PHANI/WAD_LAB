@@ -1,0 +1,102 @@
+//user authentication JSP
+
+//Create a user1 table in Oracle database
+
+//Insert 2 values into datanase
+
+//Login.jsp
+<html>
+<table align="center">
+<form action="loginverification.jsp" method="get">
+<tr>
+<td><label>Enter user name</td>
+<td><input type="text" name="t">
+</tr>
+<tr>
+<td><label>Enter password</td>
+<td><input type="password" name="p">
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="submit" value="submit"></td>
+</tr>
+</form>
+</table>
+</html>
+
+
+
+
+//Loginverification.jsp
+<%@page import="java.sql.*"%>
+<%
+try
+{
+String uname=request.getParameter("t");
+String pwd=request.getParameter("p");
+Connection con=null;
+Statement stmt=null;
+ResultSet rs=null;
+Class.forName("oracle.jdbc.driver.OracleDriver");
+con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","manager");
+stmt=con.createStatement();
+rs=stmt.executeQuery("select * from user1");
+//out.println(uname);
+//out.println(pwd);
+while(rs.next())
+{
+String uname1=rs.getString("uname");
+String pwd1=rs.getString("password");
+if((uname1).equals(uname))
+{
+if(pwd1.equals(pwd)){
+session.setAttribute("uname",uname);
+response.sendRedirect("welcome.jsp");
+}
+}
+}
+response.sendRedirect("failure.jsp");
+}
+catch(Exception e)
+{
+out.println("exception"+e);
+}
+%>
+
+
+
+
+
+//Welcome.jsp
+
+html>
+<title>welcome message
+</title>
+<body bgcolor="white">
+<%
+String uname=(String)session.getAttribute("uname");
+%>
+<center>
+<hr><b>
+<h2>congrats...
+<font color="red"></font>
+you are in home page of this site
+</h2></b>
+</center>
+<hr>
+</body>
+</html>
+
+
+//failure.jsp
+<html>
+<head>
+<title>Failure message</title>
+</head>
+<body bgcolor="white">
+<center><h2><b><hr>
+Invalid username or password please verify that
+</b></h2>
+<hr><a href="user1.jsp"><b>Try Again</b></a>
+</center>
+</body>
+</html>
