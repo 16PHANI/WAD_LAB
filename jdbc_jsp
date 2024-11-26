@@ -1,0 +1,139 @@
+//Jdbc_jsp
+
+//database.jsp
+<%@page import="java.sql.*"%>
+<%
+try{
+Class.forName("oracle.jdbc.driver.OracleDriver");
+out.println("Class will loaded");
+Connection 
+con=DriverManager.getConnection("jdbc:Oracle:thin:@localhost:1521:xe","SYSTEM","mana
+ger");
+out.println("database connected");
+}
+catch(Exception e)
+{
+out.println(e);
+}
+%>
+
+
+
+//Bookstore.jsp
+<%@page import="java.sql.*"%>
+<%
+try{
+Class.forName("oracle.jdbc.driver.OracleDriver");
+out.println("Class will loaded");
+Connection 
+con=DriverManager.getConnection("jdbc:Oracle:thin:@localhost:1521:xe","SYSTEM","mana
+ger");
+out.println("database connected");
+Statement st=con.createStatement();
+ResultSet rs=st.executeQuery("create table bookstore(title varchar(30),author 
+varchar(20),publication varchar(20),price varchar(5))");
+out.println("Create table successfully");
+}
+catch(Exception e)
+{
+out.println(e);
+}
+%>
+
+
+
+
+//Bookmainstore.jsp
+
+<html>
+<body bgcolor="cyan">
+<h2 align="center">Book-Details</h2>
+<center>
+<form name="f1" action="insert.jsp">
+<table border="1">
+<tr>
+<td><label>Book-Title</label></td>
+<td><input type="text" name="bt"></td>
+</tr>
+<tr>
+<td><label>Author-Name</label></td>
+<td><input type="text" name="an"></td>
+</tr>
+<tr>
+<td><label>Publisher-Details</label></td>
+<td><input type="text" name="pd"></td>
+</tr>
+<tr>
+<td><label>Price</label></td>
+<td><input type="text" name="price"></td>
+</tr>
+<tr>
+<td><input type="submit" value="Store"></td>
+<td><input type="reset" value="Clear"></td>
+</tr>
+</table>
+</form>
+</center>
+</body>
+</html
+
+
+//Insert.jsp
+
+<%@ page language="java" contentType="text/html"%>
+<%@page import="java.sql.*,java.util.*"%>
+<%
+String title=request.getParameter("bt");
+String author=request.getParameter("an");
+String publisher=request.getParameter("pd");
+String price=request.getParameter("price");
+try
+{
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection conn = 
+DriverManager.getConnection
+("jdbc:oracle:thin:@localhost:1521:xe", "system","manager");
+Statement stmt = conn.createStatement();
+int i=stmt.executeUpdate("insert into bookstore 
+values('"+title+"','"+author+"','"+publisher+"','"+price+"')");
+out.println("Data is successfully inserted!");
+}
+catch(Exception e)
+{
+System.out.print(e);
+e.printStackTrace();
+}
+%>
+
+
+
+
+
+//Display.jsp
+
+<%@page import="java.sql.*" %>
+<%
+try
+{
+Class.forName("oracle.jdbc.driver.OracleDriver");
+out.println("Registered the JDBC driver");
+Connection conn = 
+DriverManager.getConnection
+("jdbc:oracle:thin:@localhost:1521:xe", "system","manager");
+out.println("<br>Connection Established");
+Statement stmt = conn.createStatement();
+out.println("<br>Statement created");
+ResultSet rset = stmt.executeQuery ("SELECT * FROM bookstore");
+out.println("<table border=1 align=center 
+font=red><tr><td>Title</td><td>Author</td><td>Publisher</td><td>Price</td></tr>");
+while(rset.next())
+out.println("<tr><td>"+rset.getString(1)+"</td><td>"+rset.getString(2)+"</td><td>"+rset.
+getString(3)+"</td><td>"+rset.getString(4)+"</td></tr>");
+out.println("</table>");
+}
+catch (Exception e)
+{
+out.println(e);
+e.printStackTrace();
+}
+%>
